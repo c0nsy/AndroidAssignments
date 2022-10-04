@@ -9,4 +9,9 @@
         <string name="SwitchText">Qu\'est-ce que cela fait?</string>
         <string name="CheckBoxText">Case à cocher</string>
         <string name="RadioButtonText">Bouton Radio</string>
+        <string name="LoginButtonText">Login</string>
+        <string name="dialog_message">Voulez-vous terminer l\'activité?</string>
+        <string name="dialog_title">Terminer l\'activité?</string>
+        <string name="ok">d\'accord</string>
+        <string name="cancel">annuler</string>
 </resources>

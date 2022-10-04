@@ -16,12 +16,15 @@
         android:layout_columnWeight="1"
         android:gravity="fill"
         android:text="@string/CheckBoxText"
+        android:id="@+id/checkBox"
     />
+<!--    empty line-->
     <Switch
         android:text="@string/SwitchText"
         tools:ignore="UseSwitchCompatOrMaterialXml"
         android:layout_columnWeight="1"
         android:gravity="fill"
+        android:id="@+id/switchButton"
     />
 
     <ImageButton
@@ -29,5 +32,6 @@
         tools:src="@android:drawable/ic_menu_camera"
         android:layout_columnWeight="1"
         android:gravity="fill"
+        android:id="@+id/imageButton"
     />
 </GridLayout>

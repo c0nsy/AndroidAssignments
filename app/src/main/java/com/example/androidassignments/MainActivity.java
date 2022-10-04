@@ -2,44 +2,60 @@ package com.example.androidassignments;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    protected static final String ACTIVITY_NAME  = "MainActivity";
+    protected static final String MainActivity = "MainActivity";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.i(ACTIVITY_NAME , "In onCreate()");
-        setContentView(R.layout.activity_list_items);
+        setContentView(R.layout.activity_main);
+        Button mainActivityButton = findViewById(R.id.button);
+        mainActivityButton.setOnClickListener((new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,  ListItemsActivity.class);
+                startActivityForResult(intent,10);
+            }
+        }));
+
     }
-    @Override
-    protected void onResume() {
+    protected void onResume(){
         super.onResume();
-        Log.i(ACTIVITY_NAME , "In onResume()");
+        Log.i(MainActivity, "In onResume");
     }
-
-    @Override
-    protected void onStart() {
+    protected void onStart(){
         super.onStart();
-        Log.i(ACTIVITY_NAME , "In onStart()");
+        Log.i(MainActivity, "In onStart");
     }
-
-    @Override
-    protected void onPause() {
+    protected void onPause(){
         super.onPause();
-        Log.i(ACTIVITY_NAME , "In onPause()");
+        Log.i(MainActivity, "In onPause");
     }
-
-    @Override
-    protected void onStop() {
+    protected void onStop(){
         super.onStop();
-        Log.i(ACTIVITY_NAME , "In onStop()");
+        Log.i(MainActivity, "In onStop");
     }
-
-    @Override
-    protected void onDestroy() {
+    protected void onDestroy(){
         super.onDestroy();
-        Log.i(ACTIVITY_NAME , "In onStop()");
+        Log.i(MainActivity, "In onDestroy");
+    }
+    protected void onActivityResult(int requestCode, int responseCode, Intent data){
+        super.onActivityResult(requestCode,responseCode,data);
+        Log.i(MainActivity, "In onActivityResult");
+        if(requestCode == 10){
+            Log.i(MainActivity,"Returned to MainActivity.onActivityResult");
+            if(requestCode == Activity.RESULT_OK) {
+                int duration = Toast.LENGTH_SHORT;
+                String messagePassed = data.getStringExtra("Response");
+                Toast toast = Toast.makeText(getApplicationContext(), messagePassed,duration);
+            }
+        }
     }
 }
