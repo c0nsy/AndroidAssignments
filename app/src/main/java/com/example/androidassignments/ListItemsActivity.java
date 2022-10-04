@@ -9,6 +9,7 @@ import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -23,11 +24,13 @@ public class ListItemsActivity extends AppCompatActivity {
     protected static final String ACTIVITY_NAME = "ListItemsActivity";
     final String[] CAMERA_PERMS = {Manifest.permission.CAMERA};
     final int REQUEST_CAMERA = 1888;
+    ImageButton imageButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_items);
         Switch switchButton = findViewById(R.id.switchButton);
+
         switchButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
@@ -45,7 +48,7 @@ public class ListItemsActivity extends AppCompatActivity {
 
             }
         });
-        ImageButton imageButton = findViewById(R.id.imageButton);
+        imageButton = findViewById(R.id.imageButton);
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -105,6 +108,14 @@ public class ListItemsActivity extends AppCompatActivity {
     public void print(String string){
         int duration = Toast.LENGTH_SHORT;
         Toast toast = Toast.makeText(getApplicationContext(), string,duration);
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int responseCode, Intent data) {
+        super.onActivityResult(requestCode, responseCode, data);
+        if (requestCode == REQUEST_CAMERA && responseCode == Activity.RESULT_OK) {
+            Bitmap photo = (Bitmap) data.getExtras().get("data");
+            imageButton.setImageBitmap(photo);
+        }
     }
 
 }
