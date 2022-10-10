@@ -3,7 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/conno/OneDrive/Desktop/School Work/Year 4/CP470/Android Assignments/AndroidAssignments/app/src/main/res/layout/activity_chat_window.xml" value="0.25" />
         <entry key="..\:/Users/conno/OneDrive/Desktop/School Work/Year 4/CP470/Android Assignments/AndroidAssignments/app/src/main/res/layout/activity_login.xml" value="0.2269021739130435" />
+        <entry key="..\:/Users/conno/OneDrive/Desktop/School Work/Year 4/CP470/Android Assignments/AndroidAssignments/app/src/main/res/layout/activity_main.xml" value="0.296195652173913" />
+        <entry key="..\:/Users/conno/OneDrive/Desktop/School Work/Year 4/CP470/Android Assignments/AndroidAssignments/app/src/main/res/layout/chat_row_incoming.xml" value="0.1" />
+        <entry key="..\:/Users/conno/OneDrive/Desktop/School Work/Year 4/CP470/Android Assignments/AndroidAssignments/app/src/main/res/layout/chat_row_outgoing.xml" value="0.1" />
       </map>
     </option>
   </component>
